@@ -7,7 +7,7 @@
 /playwright/.cache/
 
 .env
-.env.*  # Якщо є файли .env.development, .env.production тощо
+.env.* 
 
 dist/
 build/
@@ -16,5 +16,5 @@ coverage/
 
 .DS_Store        # macOS
 Thumbs.db        # Windows
-*.log            # Логи, якщо можуть з’являтись
+*.log           
 
