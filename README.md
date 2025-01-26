@@ -7,7 +7,6 @@ This repository contains end-to-end tests for the Lotto24 games area using **Pla
 - **npm** or **yarn**
 
 ## Installation
-```bash
 npm install
 npx playwright install
 
@@ -32,7 +31,7 @@ npx playwright test --headed --project=chromium
 - Common practice is to prefer Playwright’s built-in locators and assertions. We avoid custom wait conditions unless strictly necessary.
 - We currently keep the selectors inside each Page Object for clarity and simplicity. If the project grows or you have many repeated selectors, consider placing them in a dedicated folder (e.g., selectors/) or in components/ for shared UI blocks.
 
-Tests Overview
+## Tests Overview
 Our main test file is lotto-games.spec.ts, which verifies the following scenario:
 1. Open the Lotto24 games area (mobile viewport).
 2. Dismiss any cookie banner if visible.
