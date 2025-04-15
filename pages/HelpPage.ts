@@ -14,10 +14,12 @@ export class HelpPage {
   }
 
   async isCorrectGameSelected(gameName: string): Promise<boolean> {
-        await this.page.locator('select[data-gtm-id="dropdown"]').waitFor({ state: 'visible', timeout: 10000 });
-        const selectedOption = this.page.locator('select[data-gtm-id="dropdown"] option:checked');
-        const selectedText = await selectedOption.innerText();
-        return selectedText.trim() === gameName.trim();
+    const selectedGame = this.page.locator(
+      ".ca-list-item--selected .ca-list-item__content"
+    );
+    await selectedGame.waitFor({ state: "visible", timeout: 10000 });
+    const selectedText = await selectedGame.innerText();
+    return selectedText.trim() === gameName.trim();
   }
 
   async isHelpButtonTextCorrect(gameName: string): Promise<boolean> {
