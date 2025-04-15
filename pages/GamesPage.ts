@@ -12,8 +12,14 @@ export class GamesPage {
       '[data-element-id="teaser-firstHeadline"] h1.headline',
       { hasText: "ZEAL Instant Games" }
     );
-    this.firstGameTeaser = page.locator("a.link-container").first();
-    this.quinarySwiper = page.locator("[data-element-id='GAMES_HOMEPAGE_QUINARY'] .swiper-wrapper")
+    this.firstGameTeaser = page
+      .locator("a.link.games")
+      .first()
+      .locator(".info-container .headline");
+    // this.firstGameTeaser = page.locator("a.link-container").first();
+    this.quinarySwiper = page.locator(
+      "[data-element-id='GAMES_HOMEPAGE_QUINARY'] .swiper-wrapper"
+    );
   }
 
   async isZealInstantGamesVisible(): Promise<boolean> {

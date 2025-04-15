@@ -6,7 +6,7 @@ export class CookieBanner {
 
   constructor(page: Page) {
     this.page = page;
-    this.acceptAllButton = page.locator('#CybotCookiebotDialogBodyButtonAccept');
+    this.acceptAllButton = page.locator('[data-element-id="cookieConsentPromptOverlay.acceptAllButton"]');
   }
 
   async acceptAllIfVisible() {
