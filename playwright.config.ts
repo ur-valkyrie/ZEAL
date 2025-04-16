@@ -14,6 +14,7 @@ export default defineConfig({
     trace: "on", 
     screenshot: "on",
     video: "on", 
+    viewport: { width: 1280, height: 720 }
   },
   projects: [
     {

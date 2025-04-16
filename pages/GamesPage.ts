@@ -12,14 +12,16 @@ export class GamesPage {
       '[data-element-id="teaser-firstHeadline"] h1.headline',
       { hasText: "ZEAL Instant Games" }
     );
-    this.firstGameTeaser = page.locator('a.link.games >> .f-text-bold-large.headline').first();
+    this.firstGameTeaser = page
+      .locator("a.link.games >> .f-text-bold-large.headline")
+      .first();
     this.quinarySwiper = page.locator(
       "[data-element-id='GAMES_HOMEPAGE_QUINARY'] .swiper-wrapper"
     );
   }
 
   async isZealInstantGamesVisible(): Promise<boolean> {
-    await this.page.waitForTimeout(1000);
+    await this.zealInstantGamesSection.scrollIntoViewIfNeeded();
     return this.zealInstantGamesSection.isVisible();
   }
 
@@ -44,9 +46,7 @@ export class GamesPage {
   }
 
   async getFirstGameName(): Promise<string> {
-    return (
-      (await this.firstGameTeaser.textContent()) ?? ""
-    );
+    return (await this.firstGameTeaser.textContent()) ?? "";
   }
 
   async clickFirstGameTeaser() {
