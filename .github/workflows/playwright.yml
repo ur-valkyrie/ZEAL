@@ -12,6 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.50.0-jammy 
+      options: --user root
+    env:
+      HOME: /root
+
 
     steps:
       - name: Checkout code
