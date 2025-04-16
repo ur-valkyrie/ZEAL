@@ -10,7 +10,7 @@ export default defineConfig({
   reporter: [["html", { outputFolder: "playwright-report" }]],
   use: {
     baseURL: process.env.BASE_URL || "https://games.lotto24.de",
-    headless: true,
+    headless: false,
     trace: "on", 
     screenshot: "on",
     video: "on", 
@@ -20,10 +20,11 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // }
+
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
     // {
     //   name: "Mobile Chrome",
     //   use: { ...devices["Pixel 5"] },
