@@ -10,7 +10,7 @@ export default defineConfig({
   reporter: [["html", { outputFolder: "playwright-report" }]],
   use: {
     baseURL: process.env.BASE_URL || "https://games.lotto24.de",
-    headless: false,
+    headless: true,
     trace: "on", 
     screenshot: "on",
     video: "on", 
