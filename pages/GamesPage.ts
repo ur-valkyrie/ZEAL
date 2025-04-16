@@ -21,6 +21,7 @@ export class GamesPage {
   }
 
   async isZealInstantGamesVisible(): Promise<boolean> {
+    await this.zealInstantGamesSection.waitFor({ state: 'visible', timeout: 10000 });
     await this.zealInstantGamesSection.scrollIntoViewIfNeeded();
     return this.zealInstantGamesSection.isVisible();
   }
